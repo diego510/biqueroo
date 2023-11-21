@@ -30,7 +30,6 @@ public class PublicationController {
     @Autowired
     private UserRepository userRepository;
 
-    @Secured("ADMIN")
     @GetMapping
     public ResponseEntity<List<Publication>> getAllPublications() {
         List<Publication> publications = publicationRepository.findAll();
