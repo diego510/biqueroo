@@ -29,7 +29,7 @@ public class ReactionController {
     @Autowired
     private PublicationRepository publicationRepository;
 
-    @Secured("ADMIN")
+    @Secured({ "ADMIN", "USER" })
     @GetMapping
     public ResponseEntity<List<Reaction>> getAllReactions() {
         List<Reaction> reactions = reactionRepository.findAll();
